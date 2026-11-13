@@ -21,8 +21,8 @@
     </p>
   </description>
   <launchable type="desktop-id">org.quire.Anyview.desktop</launchable>
-  <url type="homepage">https://github.com/PoHsuanLai/anyview</url>
-  <url type="bugtracker">https://github.com/PoHsuanLai/anyview/issues</url>
+  <url type="homepage">https://github.com/Bardo-DE/anyview</url>
+  <url type="bugtracker">https://github.com/Bardo-DE/anyview/issues</url>
   <provides>
     <binary>anyview</binary>
   </provides>

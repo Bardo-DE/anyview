@@ -14,7 +14,7 @@ change to that file first.
 
 The plugin machinery that does not depend on what a capability is (frames, the manifest envelope, discovery,
 ranking, starting and containing a process) is bayonet, a repo of its own
-(`github.com/PoHsuanLai/bayonet`), taken through one line of `[workspace.dependencies]` (section 2l).
+(`github.com/Bardo-DE/bayonet`), taken through one line of `[workspace.dependencies]` (section 2l).
 
 ## 1. Crates and allowed edges
 
@@ -740,7 +740,7 @@ is a separate executable the person installs, which uses their own distribution'
 talks to the viewer over a pipe. The viewer asks it to do one thing and kills it when it is done, so a
 plugin that crashes, hangs or lies costs one request and never the viewer.
 
-bayonet, a repo of its own (`github.com/PoHsuanLai/bayonet`, MIT OR Apache-2.0, used by other apps too), carries
+bayonet, a repo of its own (`github.com/Bardo-DE/bayonet`, MIT OR Apache-2.0, used by other apps too), carries
 the mechanics that do not depend on what a capability is: the wire's frames, the manifest's envelope, discovery in
 `<data dir>/<app>/plugins`, the ranking of plugins, the package suggestion, and starting, timing out, cancelling
 and killing a plugin. It is generic over the capability type; the viewer's capabilities and their messages stay

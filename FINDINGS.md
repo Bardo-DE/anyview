@@ -905,7 +905,7 @@ on. It is a reference, not a log: how each was found lives in git history.
   `scripts/check-boundary.sh`: calamine and quick-xml for XLSX and ODS, with the crates they pull in. A workbook larger than the viewer opens, and a JSON file larger than the peek budget,
   are `Unsupported`, not damaged.
 - **The `[patch]` sections are quire's, copied.** The root `Cargo.toml` carries quire's `[patch.crates-io]` (the
-  vello and anyrender forks) and its `[patch."https://github.com/PoHsuanLai/blitz-kit"]` path entry, because a
+  vello and anyrender forks) and its `[patch."https://github.com/Bardo-DE/blitz-kit"]` path entry, because a
   patch applies only at a workspace root and `anyview-ui` now names the render stack through `ds-blitz`. A
   change to either block in quire's root is made here in the same change.
 

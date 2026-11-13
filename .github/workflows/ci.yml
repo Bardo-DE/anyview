@@ -184,7 +184,7 @@ jobs:
         run: |
           rev=$(sed -n 's/^mpv-wgpu-player = .*rev = "\([0-9a-f]*\)".*/\1/p' Cargo.toml)
           test -n "$rev"
-          git clone https://github.com/PoHsuanLai/mpv-wgpu "$RUNNER_TEMP/mpv-wgpu"
+          git clone https://github.com/Bardo-DE/mpv-wgpu "$RUNNER_TEMP/mpv-wgpu"
           git -C "$RUNNER_TEMP/mpv-wgpu" checkout "$rev"
           (cd "$RUNNER_TEMP/mpv-wgpu" && CARGO_TARGET_DIR="$RUNNER_TEMP/mpv-wgpu-target" \
             cargo build --release -p mpv-wgpu-cplugin --locked)

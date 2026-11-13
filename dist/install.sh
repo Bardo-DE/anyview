@@ -46,7 +46,7 @@
 # The mpv-wgpu revision fetched when no checkout is given: the one the viewer is tested against, kept in
 # step with the desktop manifest's pin. Change it here and nowhere else.
 MPV_WGPU_REV=64884b908bc595e70fe4a9270b23633204fd14bb
-MPV_WGPU_URL="${MPV_WGPU_URL:-https://github.com/PoHsuanLai/mpv-wgpu.git}"
+MPV_WGPU_URL="${MPV_WGPU_URL:-https://github.com/Bardo-DE/mpv-wgpu.git}"
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

@@ -17,7 +17,7 @@ and the development packages of the system libraries the build links: fontconfig
 libxml2, libpng, zlib, bzip2, xz, GLib and ALSA (`libasound2-dev`, `alsa-lib-devel`: the sound card).
 
 ```sh
-git clone https://github.com/PoHsuanLai/anyview.git
+git clone https://github.com/Bardo-DE/anyview.git
 cd anyview
 cargo build --release --locked
 target/release/anyview --version
@@ -29,7 +29,7 @@ checkout. The pins live in `[workspace.dependencies]`; the quire crates (`ds`, `
 `ds-settings`, `ds-harness`, `ds-lint`) are the lines that name quire's rev.
 
 To work on quire or blitz-kit at the same time, check them out beside this repository and add a
-`[patch."https://github.com/PoHsuanLai/quire.git"]` (or blitz-kit) table pointing at the local path to
+`[patch."https://github.com/Bardo-DE/quire.git"]` (or blitz-kit) table pointing at the local path to
 your own copy of `Cargo.toml`; do not commit it.
 
 Checks: `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --all-features -- -D warnings`,
@@ -98,7 +98,7 @@ package to install. `dist/helpers/anyview.toml` lists the packages for each dist
 The package names the Install… button uses are in `dist/helpers/anyview.toml`, with a note on each name that
 has not been checked against the distribution's package list.
 
-The `mpv` plugin loads [mpv-wgpu](https://github.com/PoHsuanLai/mpv-wgpu)'s C plugin into your mpv, so the
+The `mpv` plugin loads [mpv-wgpu](https://github.com/Bardo-DE/mpv-wgpu)'s C plugin into your mpv, so the
 installer builds that too: from `--with-mpv-from DIR`, `MPV_WGPU_DIR` or a checkout at `../mpv` if there is
 one, and otherwise from the revision pinned at the top of `dist/install.sh`, fetched with `git` into
 `~/.cache/anyview/build` (it needs git, the network and a Rust toolchain, like the viewer's own build). If
@@ -167,7 +167,7 @@ All panes of a window share the one `Workers` pool. With `with_store(root)` the 
 If anyview panics it prints a short report and keeps the last ten under
 `$XDG_STATE_HOME/anyview/crash/` (by default `~/.local/state/anyview/crash/`). Attach the newest one, the
 output of `anyview --version` and the file type involved to an issue at
-<https://github.com/PoHsuanLai/anyview/issues>.
+<https://github.com/Bardo-DE/anyview/issues>.
 
 ## Licence
 

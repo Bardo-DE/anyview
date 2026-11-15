@@ -68,7 +68,7 @@ pub enum PluginPicture {
 }
 
 /// The plugins that decode the pictures the viewer has no decoder for (HEIC, and a raw file in full),
-/// each a separate program the person installed (CONVENTIONS section 15).
+/// each a separate program the person installed.
 pub trait ImagePlugins: Debug + Send + Sync + 'static {
     /// The picture of `source`, a file of `sniffed`'s type, with at most `max_area` pixels. Blocking:
     /// it starts a program and waits for it, so a worker calls it, never the UI thread.

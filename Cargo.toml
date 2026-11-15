@@ -380,7 +380,7 @@ tiff = "0.11"
 # `anyview-media` (feature `player`): playback into a caller-owned wgpu texture, MIT OR Apache-2.0; the
 # rev is mpv-wgpu master. Only its `subprocess` feature is taken: the person's own `mpv` runs as a child
 # process with mpv-wgpu's C plugin loaded into it, so no libmpv and no `rsmpv` is linked, and the
-# distribution's GPL mpv stays a program we run (CONVENTIONS section 15).
+# distribution's GPL mpv stays a program we run.
 mpv-wgpu-player = { git = "https://github.com/Bardo-DE/mpv-wgpu", rev = "64884b908bc595e70fe4a9270b23633204fd14bb", default-features = false, features = ["subprocess"] }
 # `anyview-peek` (feature `media`): a recording's facts, tags and cover without decoding it, pure Rust.
 # `symphonia` reads audio (MP3, AAC and ALAC in MP4, FLAC, Ogg Vorbis and Opus, WAV, AIFF): MPL-2.0,
@@ -440,7 +440,7 @@ unsafe_code = "deny"
 missing_debug_implementations = "warn"
 
 # Matching on our own enums names every variant, so adding one is a compile error wherever it
-# matters (CONVENTIONS section 4; plan section 4.3). Tests may unwrap (clippy.toml).
+# matters (plan section 4.3). Tests may unwrap (clippy.toml).
 [workspace.lints.clippy]
 unwrap_used = "deny"
 wildcard_enum_match_arm = "deny"

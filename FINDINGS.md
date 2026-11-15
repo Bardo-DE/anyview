@@ -281,7 +281,7 @@ on. It is a reference, not a log: how each was found lives in git history.
   manifest, and `jxl-oxide`, `psd`, `icns`, `resvg`, `kamadak-exif`, `img-parts`, `ravif`, `syntect`,
   `pulldown-cmark`, `csv` and `encoding_rs` sit below the pinned block next to `infer`. Ends at the next
   change to quire's `docs/workspace-deps.toml`: add those features to its `image` line and those crates
-  to it (CONVENTIONS section 10), then copy the block verbatim here.
+  to it, then copy the block verbatim here.
 - **AVIF decoding is not built or tested here.** The `avif` feature of `anyview-image` needs the dav1d
   C library with its headers and a `dav1d.pc` for pkg-config; this build image has the runtime library
   (`libdav1d7`) but not `libdav1d-dev`, so `cargo clippy --all-features` and `cargo test --all-features`
@@ -534,7 +534,7 @@ on. It is a reference, not a log: how each was found lives in git history.
 - **`mpv-wgpu-player` and `pollster` sit below the pinned block.** They are `anyview-media`'s, the player at
   mpv-wgpu `d017756` (master) with only its `subprocess` feature (the person's `mpv` as a child process: no
   `rsmpv`, no libmpv), which resolves the one `wgpu` 29.0.4 the tree already has, and neither is shared with quire,
-  shell-host or sill, so they stay outside the block like `jxl-oxide` (CONVENTIONS section 10: the block is for
+  shell-host or sill, so they stay outside the block like `jxl-oxide` (the block is for
   what the repos share). Ends if another repo links either: they then move into quire's `docs/workspace-deps.toml`
   first.
 - **The media crate carries its own fixtures.** `crates/anyview-media/tests/fixtures/` holds `clip.mkv`
@@ -545,7 +545,7 @@ on. It is a reference, not a log: how each was found lives in git history.
   library. Distribution builds of libav and libmpv are GPL (Fedora: `libavcodec-free` GPL-3.0-or-later, `mpv-libs`
   GPL-2.0-or-later), which is why nothing links them: `check-boundary.sh` forbids `rsmpv`, `rsmpv-sys`,
   `ffmpeg-next` and `ffmpeg-sys-next` in every crate and in `Cargo.lock`, and `dev/no-linked-codecs.sh` reads
-  `ldd` of the built binary (CONVENTIONS section 15). What the person runs is theirs: mpv, ffmpeg and ffprobe.
+  `ldd` of the built binary. What the person runs is theirs: mpv, ffmpeg and ffprobe.
 - **Which encoders this machine has is the plugin's greeting.** The FFmpeg plugin asks its `ffmpeg -encoders`
   (AAC for M4A, libmp3lame for MP3, FLAC, 16-bit PCM for WAV, libopus or the native Opus for Opus) and lists the
   targets it can write in `hello`; `MediaPlugins::offer` keeps those of the manifest's targets and of the file's
@@ -638,7 +638,7 @@ on. It is a reference, not a log: how each was found lives in git history.
 - **The trash is not behind `anyview-platform`.** `Trash` and `SystemTrash` (the `trash` crate, pure Rust on
   Linux, no bus) live in the binary because the crate is cross-platform. Ends if a platform needs its own: the trait
   then moves to `anyview-platform` beside the others.
-- **`trash` is below the pinned block.** It is `anyview`'s alone, MIT (CONVENTIONS section 10): it joins quire's
+- **`trash` is below the pinned block.** It is `anyview`'s alone, MIT: it joins quire's
   `docs/workspace-deps.toml` when sill needs to trash a file.
 - **The cold launch is over its budget, and the GPU stack is the reason.** PLAN section 7 sets 150 ms from the
   process starting to the first content of a JPEG cold, and 50 ms warm. Measured 2026-10-03 on the release binary

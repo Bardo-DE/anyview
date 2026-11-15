@@ -75,7 +75,7 @@ cd "$(dirname "$0")/.."
 # of what it may reach; what it may not NAME in its own manifest is the DIRECT table below: the binary
 # asks for the renderer, a decoder, the player, a codec library, the bus or a PDF library only through
 # the crate that owns it. It does name `dioxus`, for the root component every window shares.
-# No crate links libmpv or libav (CONVENTIONS section 15, "run, never link"): `rsmpv`, `rsmpv-sys`,
+# No crate links libmpv or libav (codec and copyleft libraries run as separate processes, never linked): `rsmpv`, `rsmpv-sys`,
 # `ffmpeg-next` and `ffmpeg-sys-next` are forbidden in every crate's tree by FORBIDDEN_EVERYWHERE
 # below, and `dev/ldd-test.sh` checks that the built binary has no libmpv and no libav*. Playing is the
 # person's own mpv run as a child process (anyview-media with its `player` feature, through
@@ -99,7 +99,7 @@ cd "$(dirname "$0")/.."
 # `image` to read the PNG, TIFF or PPM a tool wrote, `tempfile` and `thiserror`): they run libheif's and
 # LibRaw's programs and name nothing of the viewer's.
 # Forbidden in every crate's tree, whatever its row says: the bindings of libmpv and of libav, and so the
-# libraries themselves (CONVENTIONS section 15). Codec and copyleft code lives in separate-process plugins
+# libraries themselves. Codec and copyleft code lives in separate-process plugins
 # that use the person's own distro tools.
 # The same for the picture codecs: libheif's bindings, LibRaw's bindings and the raw decoders that are
 # LGPL or link C (`rawloader`, `rawler`). Pure-Rust parsing of a container (the viewer reads a raw

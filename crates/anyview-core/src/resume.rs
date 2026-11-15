@@ -23,7 +23,7 @@ pub enum TrackChoice {
     Track(TrackId),
 }
 
-/// Where a person left a file. Stored per file, so it is adjacently tagged (CONVENTIONS section 12).
+/// Where a person left a file. Stored per file, so it is adjacently tagged.
 /// A kind this build does not have fails to load: the store reports that file's record as corrupt
 /// and prunes it, so the person loses the place in that one file and nothing else.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]

@@ -4,8 +4,8 @@ anyview is the viewer: one program that opens every common file type (images, PD
 code, Markdown, tables, audio and video, fonts, archives, books, office documents) and the format
 library the launcher shares, so a file looks the same in the launcher's pane and in a window. This
 file is the map: which crate owns what, what may depend on what, where each concept lives, the
-exact shape of each trait, and the commands that gate a change. `CONVENTIONS.md` holds the rules
-every repo shares; where it and this file disagree, this file wins for anyview.
+exact shape of each trait, and the commands that gate a change. `CONVENTIONS.md` points to the
+style guides every repo shares.
 
 anyview is a sibling checkout of quire (`../quire`) and takes its design-system crates by path,
 the way sill does (quire `CONSUMING.md` section 1). The pinned block of `[workspace.dependencies]`
@@ -1097,7 +1097,7 @@ offers a codec, through quire's shared missing-helper parts and never through an
 ## 2m. Processes, and what to install
 
 The viewer links no codec and no copyleft code: video and audio are played and probed by programs the person
-installs, which it runs (CONVENTIONS section 15, "run, never link"). The processes of one running viewer:
+installs, which it runs as separate processes, never links. The processes of one running viewer:
 
 ```text
 anyview                          the viewer: windows, the media thread, the pool; MIT OR Apache-2.0
@@ -1394,7 +1394,7 @@ The single place a concept lives. Extend it; never write a second one.
 ## 5. The canonical traits
 
 A trait exists where two or more implementations swap or a generic consumer runs over many
-(CONVENTIONS section 5). Closed sets stay enums.
+(a trait is not for a single implementation). Closed sets stay enums.
 
 ```rust
 /// The light tier of one format: cheap, no GPU, no player. One implementation per kind.

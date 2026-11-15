@@ -1,6 +1,6 @@
 //! Everything the edge reaches outside the process, chosen once by the binary: the person's
 //! directories, the session bus and the way a program is started. No implementation reads an
-//! environment variable, a directory or a bus address itself (CONVENTIONS section 6); this file
+//! environment variable, a directory or a bus address itself; this file
 //! is the one place the process is asked.
 
 use crate::spawn::{ProcessSpawn, RefuseSpawn, Spawn};

@@ -9,7 +9,7 @@ use crate::units::PixelSize;
 
 /// The light tier of one format: cheap, no GPU, no player. It runs in the launcher pane and as the
 /// viewer's first frame. Each format implements it once, and a generic consumer runs over the
-/// implementations (CONVENTIONS section 5).
+/// implementations.
 pub trait Peek: 'static {
     /// The kind of file this implementation peeks at.
     const KIND: FormatKind;

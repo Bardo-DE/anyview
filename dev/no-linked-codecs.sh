@@ -2,7 +2,7 @@
 # Checks the built viewer binary links no libmpv, no libav*, no libheif and no LibRaw: playback is the person's own mpv run
 # as a child process, probing and writing recordings is the FFmpeg plugin, and HEIC and raw files are
 # decoded by the HEIF and RAW plugins, so none of those
-# libraries is loaded into the viewer (CONVENTIONS section 15, "run, never link"). It reads the
+# libraries is loaded into the viewer (codec libraries run as separate processes, never linked). It reads the
 # binary's dynamic dependencies with `ldd` (a binary is never run) and fails when ldd says nothing,
 # so a binary it could not read cannot pass.
 #

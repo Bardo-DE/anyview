@@ -9,7 +9,7 @@
 //! ([`AudioFocus`]). What it asks of the plugins is [`PlayerPlugins`]; a host without a plugin
 //! registry answers with [`FixedMpv`].
 //!
-//! No library of codecs is linked: libmpv and libav are never in this tree (CONVENTIONS section 15).
+//! No library of codecs is linked: libmpv and libav are never in this tree.
 //!
 //! ```ignore
 //! let hub = MediaHub::standalone(&runtime, AudioDriver::Auto, Arc::new(FixedMpv::new(mpv)));
